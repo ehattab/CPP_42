@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/06 15:06:17 by ehattab           #+#    #+#             */
-/*   Updated: 2026/03/06 19:52:14 by ehattab          ###   ########.fr       */
+/*   Created: 2026/02/26 20:07:43 by ehattab           #+#    #+#             */
+/*   Updated: 2026/03/01 16:42:22 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "Fixed.hpp"
+#ifndef ZOMBIE_H
+#define ZOMBIE_H
 
-int	main(void)
+# include <iostream>
+# include <string>
+
+class Zombie
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	private:
+		std::string _name;
+	public:
+	Zombie(std::string name);
+	~Zombie();
+	void	announce(void);
+};
+Zombie*	newZombie( std::string name );
+void randomChump( std::string name );
+
+#endif

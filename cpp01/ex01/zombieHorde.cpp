@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/06 15:06:17 by ehattab           #+#    #+#             */
-/*   Updated: 2026/03/06 19:52:14 by ehattab          ###   ########.fr       */
+/*   Created: 2026/03/01 16:53:15 by ehattab           #+#    #+#             */
+/*   Updated: 2026/03/01 17:15:11 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "Fixed.hpp"
+#include "Zombie.hpp"
 
-int	main(void)
+Zombie*	zombieHorde( int N, std::string name )
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	Zombie *horde = new Zombie[N];
+	for (int i = 0; i < N; i++)
+	{
+		horde[i].setName(name);
+	}
+	return (horde);
 }

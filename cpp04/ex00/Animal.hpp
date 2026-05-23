@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/06 15:06:17 by ehattab           #+#    #+#             */
-/*   Updated: 2026/03/06 19:52:14 by ehattab          ###   ########.fr       */
+/*   Created: 2026/03/09 20:27:59 by ehattab           #+#    #+#             */
+/*   Updated: 2026/03/12 16:47:55 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "Fixed.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int	main(void)
+#include <iostream>
+#include <string>
+
+class Animal
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+protected:
+	std::string _type;
+public:
+	Animal();
+	virtual ~Animal();
+	Animal(std::string _type);
+	Animal(const Animal &other);
+	Animal& operator=(const Animal &other);
+	virtual void	makeSound(void) const;
+	std::string getType(void) const;
+};
+
+#endif

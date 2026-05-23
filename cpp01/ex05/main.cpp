@@ -5,23 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/06 15:06:17 by ehattab           #+#    #+#             */
-/*   Updated: 2026/03/06 19:52:14 by ehattab          ###   ########.fr       */
+/*   Created: 2026/03/03 15:19:10 by ehattab           #+#    #+#             */
+/*   Updated: 2026/03/03 20:34:08 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
-#include "Fixed.hpp"
+#include "Harl.hpp"
 
-int	main(void)
+int main(void)
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	Harl donut;
+
+	std::cout << "--- DEBUG ---" << std::endl;
+	donut.complain("DEBUG");
+	std::cout << "--- INFO ---" << std::endl;
+	donut.complain("INFO");
+	std::cout << "--- WARNING ---" << std::endl;
+	donut.complain("WARNING");
+	std::cout << "--- ERROR ---" << std::endl;
+	donut.complain("ERROR");
+	return (0);
 }

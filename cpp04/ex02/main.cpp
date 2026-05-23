@@ -5,23 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/06 15:06:17 by ehattab           #+#    #+#             */
-/*   Updated: 2026/03/06 19:52:14 by ehattab          ###   ########.fr       */
+/*   Created: 2026/03/09 20:21:02 by ehattab           #+#    #+#             */
+/*   Updated: 2026/03/12 17:04:07 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
-#include "Fixed.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-int	main(void)
+int main()
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	const Animal *dog = new Dog();
+	const Animal *cat = new Cat();
+	dog->makeSound();
+	cat->makeSound();
+
+	// const Animal* animal = new Animal();
+
+	delete dog;
+	delete cat;
 	return 0;
 }

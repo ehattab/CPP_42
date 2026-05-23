@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/06 15:06:17 by ehattab           #+#    #+#             */
-/*   Updated: 2026/03/06 19:52:14 by ehattab          ###   ########.fr       */
+/*   Created: 2026/03/11 17:09:46 by ehattab           #+#    #+#             */
+/*   Updated: 2026/03/12 14:30:26 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "Fixed.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int	main(void)
+#include <iostream>
+#include <string>
+
+class Brain
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+private:
+	std::string ideas[100];
+public:
+	Brain();
+	~Brain();
+	Brain(const Brain &other);
+	Brain& operator=(const Brain &other);
+	void	setIdeas(std::string str);
+	std::string*	getIdeas(void);
+};
+
+#endif
