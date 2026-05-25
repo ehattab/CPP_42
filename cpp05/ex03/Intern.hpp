@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 20:58:12 by ehattab           #+#    #+#             */
-/*   Updated: 2026/05/25 18:23:12 by ehattab          ###   ########.fr       */
+/*   Created: 2026/05/25 20:27:42 by ehattab           #+#    #+#             */
+/*   Updated: 2026/05/25 21:00:41 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+#ifndef INTERN_HPP
+#define INTERN_HPP
 
 #include "AForm.hpp"
 
-class PresidentialPardonForm : public AForm
+class Intern
 {
 public:
-	PresidentialPardonForm(std::string const &target);
-	PresidentialPardonForm(PresidentialPardonForm const &other);
-	PresidentialPardonForm &operator=(PresidentialPardonForm const &other);
-	~PresidentialPardonForm();
+	Intern();
+	Intern(Intern const &other);
+	Intern &operator=(Intern const &other);
+	~Intern();
 
-	void executeAction() const;
-
+AForm *makeForm(std::string const &formName, std::string const &target) const;
 private:
-	std::string _target;
-	PresidentialPardonForm();
+	AForm *makeShrubbery(std::string const &target) const;
+	AForm *makeRobotomy(std::string const &target) const;
+	AForm *makePresidential(std::string const &target) const;
 };
 
 #endif

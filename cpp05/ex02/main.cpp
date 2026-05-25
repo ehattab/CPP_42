@@ -6,108 +6,87 @@
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 20:14:48 by ehattab           #+#    #+#             */
-/*   Updated: 2026/05/23 20:41:53 by ehattab          ###   ########.fr       */
+/*   Updated: 2026/05/25 20:18:46 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
 	try
 	{
-		Form contract("Contract", 50, 25);
-		std::cout << contract << std::endl;
+		Bureaucrat god("nobody", 0);
+		std::cout << god << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Exception: " << e.what() << std::endl;
+		std::cerr << "Exception : " << e.what() << std::endl;
 	}
 
 	try
 	{
-		Form bad("Bad", 0, 25);
+		Bureaucrat trash("Poubelle", 151);
+		std::cout << trash << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Exception: " << e.what() << std::endl;
+		std::cerr << "Exception : " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 
 	try
 	{
-		Form bad("Bad", 50, 151);
+		Bureaucrat bob("Bob", 137);
+		Bureaucrat noob("Noob", 150);
+		ShrubberyCreationForm shrub("Maison");
+
+		std::cout << shrub << std::endl;
+
+		noob.signForm(shrub);
+
+		bob.signForm(shrub);
+
+		noob.executeForm(shrub);
+
+		bob.executeForm(shrub);
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Exception: " << e.what() << std::endl;
+
+		std::cerr << "Exception : " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 
 	try
 	{
-		Form contract("Contract", 50, 25);
-		Bureaucrat elyes("Elyes", 42);
-		std::cout << contract << std::endl;
-		std::cout << elyes << std::endl;
-		elyes.signForm(contract);
-		std::cout << contract << std::endl;
+		Bureaucrat jack("Jack", 45);
+		RobotomyRequestForm robot("Claptrap");
+
+		jack.signForm(robot);
+		jack.executeForm(robot);
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Exception: " << e.what() << std::endl;
+		std::cerr << "Exception : " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 
 	try
 	{
-		Form secret("Top Secret", 10, 5);
-		Bureaucrat bob("Bob", 42);
-		std::cout << secret << std::endl;
-		std::cout << bob << std::endl;
-		bob.signForm(secret);
-		std::cout << secret << std::endl;
+		Bureaucrat boss("Boss", 1);
+		PresidentialPardonForm pardon("Lacrim");
+		boss.executeForm(pardon);
+		boss.signForm(pardon);
+		boss.executeForm(pardon);
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	try
-	{
-		Form memo("Memo", 100, 50);
-		Bureaucrat jeff("Jeff", 1);
-		Bureaucrat bob("Bob", 1);
-		jeff.signForm(memo);
-		std::cout << memo << std::endl;
-		bob.signForm(memo);
-		std::cout << memo << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	try
-	{
-		Form form("Exact", 50, 25);
-		Bureaucrat exact("Exact", 50);
-		std::cout << form << std::endl;
-		exact.signForm(form);
-		std::cout << form << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	try
-	{
-		Form form("Almost", 50, 25);
-		Bureaucrat almost("Almost", 51);
-		almost.signForm(form);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exception: " << e.what() << std::endl;
+		std::cerr << "Exception : " << e.what() << std::endl;
 	}
 
 	return 0;
