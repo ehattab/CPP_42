@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
+/*   By: usr <usr@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 19:19:44 by ehattab           #+#    #+#             */
-/*   Updated: 2026/06/01 21:02:35 by ehattab          ###   ########.fr       */
+/*   Updated: 2026/06/02 15:54:21 by usr              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ static std::string convert(std::string value)
 		if (value[i] == '-' || value[i] == '+')
 			i++;
 		if (value[i] >= 10 && value[i] <= 127);
+		if (value[i] == '.' || value[i] == 'f');
+		
 	}
 }
