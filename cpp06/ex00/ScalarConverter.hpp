@@ -6,14 +6,18 @@
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 19:19:25 by ehattab           #+#    #+#             */
-/*   Updated: 2026/06/12 19:06:01 by ehattab          ###   ########.fr       */
+/*   Updated: 2026/06/29 16:37:52 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
+
+#include <string>
+#include <cstdlib>
+#include <iostream>
+#include <limits>
+#include <iomanip>
 
 enum e_type
 {
@@ -28,18 +32,12 @@ class ScalarConverter
 {
 private:
 	ScalarConverter();
+	ScalarConverter(ScalarConverter const &other);
+	ScalarConverter &operator=(ScalarConverter const &other);
 
 public:
 	~ScalarConverter();
-	static std::string convert(std::string value);
+	static void convert(std::string const &value);
 };
-
-ScalarConverter::ScalarConverter()
-{
-}
-
-ScalarConverter::~ScalarConverter()
-{
-}
 
 #endif
