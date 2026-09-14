@@ -6,7 +6,7 @@
 /*   By: ehattab <ehattab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 20:26:19 by ehattab           #+#    #+#             */
-/*   Updated: 2026/09/03 20:39:44 by ehattab          ###   ########.fr       */
+/*   Updated: 2026/09/05 18:05:20 by ehattab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class Array
 	public:
 		const char *what() const throw()
 		{
-			return ("Array index out of bounds");
+			return ("Out of range or missing");
 		}
 	};
 	~Array() { delete[] _array; }
